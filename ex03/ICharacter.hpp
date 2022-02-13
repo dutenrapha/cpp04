@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdutenke <rdutenke@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/12 17:34:49 by rdutenke          #+#    #+#             */
+/*   Updated: 2022/02/12 21:27:21 by rdutenke         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
+#include <iostream>
+#include "AMateria.hpp"
+
+class AMateria;
+
+class ICharacter
+{
+	public:
+	virtual ~ICharacter() {}
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter& target) = 0;
+};
+
+#endif
